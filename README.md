@@ -1,4 +1,6 @@
 # Data Structures and Algorithms
+Data structures + Algorithms = Programs
+
 ## Data Structure 
 - Array
 - Graphs
