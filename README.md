@@ -9,6 +9,7 @@ Data structures + Algorithms = Programs
 - Stack 
 - Tree
 - Queue
+- Set
 
 ## Algorithms
 - Sorting
@@ -18,3 +19,6 @@ Data structures + Algorithms = Programs
 
 ## Big-O complexity Chart
 ![img.png](img.png)
+![img_1.png](img_1.png)
+![img_2.png](img_2.png)
+![img_3.png](img_3.png)
