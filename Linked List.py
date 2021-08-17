@@ -14,3 +14,7 @@ node2=Node(2)
 singlyLinkedlist.head=node1
 singlyLinkedlist.head.next=node2   ## --- O(1)
 singlyLinkedlist.tail = node2
+
+
+## insertion
+
