@@ -6,11 +6,15 @@ Data structures + Algorithms = Programs
 - Graphs
 - Hash table
 - Linked List
-- Stack
+- Stack 
+- Tree
+- Queue
 
 ## Algorithms
-
-
+- Sorting
+- Dynamic Programming
+- BFS + DFS(Search)
+- Recursion
 
 ## Big-O complexity Chart
 ![img.png](img.png)
