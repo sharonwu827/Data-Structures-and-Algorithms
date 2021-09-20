@@ -78,3 +78,26 @@ class linkedList:
                 del temp
         except Exception as e:
             print(str(e))
+
+    # To delete the last node of the linked list
+    # we will traverse each node in the linked list
+    # check if the next pointer of the next node of current node points to None
+    # if yes then the next node of current node is the last node and it will get deleted.
+
+    def delFromEnd(self):
+        try:
+            if self.head == None:
+                raise Exception("Empty Linked List")
+            else:
+                curr = self.head
+                prev = None
+                while curr.next != None:
+                    # traverse each node in the linked list
+                    prev = curr
+                    curr = curr.next
+                prev.next = curr.next
+                del curr
+        except Exception as e:
+            print(str(e))
+
+
