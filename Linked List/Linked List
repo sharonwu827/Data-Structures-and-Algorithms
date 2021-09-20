@@ -101,3 +101,19 @@ class linkedList:
             print(str(e))
 
 
+    def delAtPos(self, position):
+        try:
+            if self.head == None:
+                raise Exception("Empty Linked List")
+            else:
+                curr = self.head
+                prev = None
+                count = 1
+                while curr != None and count < position:
+                    prev = curr
+                    curr = curr.next
+                    count += 1
+                prev.next = curr.next
+                del curr
+        except Exception as e:
+            print(str(e))
