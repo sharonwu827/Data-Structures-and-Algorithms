@@ -47,6 +47,54 @@ class LinkedList:
             new_node = Node(key)
             h.next=new_mode
 
+    # Utility function to print the linked list
+    def printList(self):
+        h=self.head
+        while h :
+            print(h.data, end=" ")
+            h=h.next
+        print()
+
+    # deleting a given node
+    def deleteNode(self, key):
+        h=self.head
+        prev=None
+        if h is None:
+            print("the list is empty")
+            return
+
+        if h.data ==key:
+            self.head = h.next
+            return
+
+        while h is not None and h.data!=key:
+            prev = h
+            h=h.next
+        if h is None:
+            print ("key is not in the list")
+        prev.next = h.next
+
+
+# Code execution starts here
+if __name__=='__main__':
+
+	myList = LinkedList()
+	myList.append(3)
+	myList.append(4)
+	myList.append(5)
+	myList.append(6)
+	myList.append(7)
+	myList.append(9)
+	print("Original List is: ", end = " ")
+	myList.printList()
+	myList.deleteNode(6)
+	print("After Deletion: ", end = " ")
+	myList.printList()
+
+
+
+
+
 
 
 
