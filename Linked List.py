@@ -22,7 +22,7 @@ a.nextnode.value # return 2
 
 
 
-# Deletion in Linked List
+# Deletion in Linked List.py
 # below is the structure of a node which is used to create a new node every time
 
 class Node:
@@ -35,7 +35,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    # Inserting at the end of a Linked List (append function)
+    # Inserting at the end of a Linked List.py (append function)
     def append(self,key):
         h=self.head
         if h is None:
