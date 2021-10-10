@@ -21,3 +21,7 @@ class BinaryTree(object):
             t = BinaryTree(newTree)
             t.rightChild = self.rightChild
             self.rightChild = t
+
+    def getRightChild(self):
+        return self.rightChild
+
