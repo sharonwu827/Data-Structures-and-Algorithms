@@ -9,5 +9,6 @@
     <orderEntry type="module" module-name="Docker_Kubernetes" />
     <orderEntry type="module" module-name="Deep-Learning" />
     <orderEntry type="module" module-name="machine-learning-project" />
+    <orderEntry type="module" module-name="Backend-REST-API" />
   </component>
 </module>
