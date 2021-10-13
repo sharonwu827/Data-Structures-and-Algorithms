@@ -10,5 +10,6 @@
     <orderEntry type="module" module-name="Deep-Learning" />
     <orderEntry type="module" module-name="machine-learning-project" />
     <orderEntry type="module" module-name="Backend-REST-API" />
+    <orderEntry type="module" module-name="A-Two-stage-Deep-Neural-Network-for-Automated-Essay-Scoring" />
   </component>
 </module>
