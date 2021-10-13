@@ -2,7 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../Deep-Learning-Project" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../Docker_Kubernetes" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../Toolbox" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../machine-learning-project" vcs="Git" />
   </component>
 </project>

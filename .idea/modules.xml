@@ -4,8 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../Airflow/.idea/Airflow.iml" filepath="$PROJECT_DIR$/../Airflow/.idea/Airflow.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Data-Structures-and-Algorithms.iml" filepath="$PROJECT_DIR$/.idea/Data-Structures-and-Algorithms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Deep-Learning-Project/.idea/Deep-Learning.iml" filepath="$PROJECT_DIR$/../Deep-Learning-Project/.idea/Deep-Learning.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Docker_Kubernetes/.idea/Docker_Kubernetes.iml" filepath="$PROJECT_DIR$/../Docker_Kubernetes/.idea/Docker_Kubernetes.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Toolbox/.idea/Toolbox.iml" filepath="$PROJECT_DIR$/../Toolbox/.idea/Toolbox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../machine-learning-project/.idea/machine-learning-project.iml" filepath="$PROJECT_DIR$/../machine-learning-project/.idea/machine-learning-project.iml" />
     </modules>
   </component>
 </project>

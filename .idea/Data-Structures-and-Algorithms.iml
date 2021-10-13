@@ -7,5 +7,7 @@
     <orderEntry type="module" module-name="Airflow" />
     <orderEntry type="module" module-name="Toolbox" />
     <orderEntry type="module" module-name="Docker_Kubernetes" />
+    <orderEntry type="module" module-name="Deep-Learning" />
+    <orderEntry type="module" module-name="machine-learning-project" />
   </component>
 </module>
