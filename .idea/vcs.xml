@@ -4,6 +4,7 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../Django-API" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../Docker_Kubernetes" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../Model-Deployment" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../Recommender-Systems" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../Toolbox" vcs="Git" />
   </component>

@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/Data-Structures-and-Algorithms.iml" filepath="$PROJECT_DIR$/.idea/Data-Structures-and-Algorithms.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Django-API/.idea/Django-API.iml" filepath="$PROJECT_DIR$/../Django-API/.idea/Django-API.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Docker_Kubernetes/.idea/Docker_Kubernetes.iml" filepath="$PROJECT_DIR$/../Docker_Kubernetes/.idea/Docker_Kubernetes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Model-Deployment/.idea/Model-Deployment.iml" filepath="$PROJECT_DIR$/../Model-Deployment/.idea/Model-Deployment.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Recommender-Systems/.idea/Recommender-Systems.iml" filepath="$PROJECT_DIR$/../Recommender-Systems/.idea/Recommender-Systems.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Toolbox/.idea/Toolbox.iml" filepath="$PROJECT_DIR$/../Toolbox/.idea/Toolbox.iml" />
     </modules>

@@ -9,5 +9,6 @@
     <orderEntry type="module" module-name="Docker_Kubernetes" />
     <orderEntry type="module" module-name="Recommender-Systems" />
     <orderEntry type="module" module-name="Django-API" />
+    <orderEntry type="module" module-name="Model-Deployment" />
   </component>
 </module>
