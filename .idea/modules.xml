@@ -7,7 +7,6 @@
       <module fileurl="file://$PROJECT_DIR$/../Django-API/.idea/Django-API.iml" filepath="$PROJECT_DIR$/../Django-API/.idea/Django-API.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Docker_Kubernetes/.idea/Docker_Kubernetes.iml" filepath="$PROJECT_DIR$/../Docker_Kubernetes/.idea/Docker_Kubernetes.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Model-Deployment/.idea/Model-Deployment.iml" filepath="$PROJECT_DIR$/../Model-Deployment/.idea/Model-Deployment.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../Models-Deployment-with-Django/.idea/Models-Deployment-with-Django.iml" filepath="$PROJECT_DIR$/../Models-Deployment-with-Django/.idea/Models-Deployment-with-Django.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Recommender-Systems/.idea/Recommender-Systems.iml" filepath="$PROJECT_DIR$/../Recommender-Systems/.idea/Recommender-Systems.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Toolbox/.idea/Toolbox.iml" filepath="$PROJECT_DIR$/../Toolbox/.idea/Toolbox.iml" />
     </modules>
