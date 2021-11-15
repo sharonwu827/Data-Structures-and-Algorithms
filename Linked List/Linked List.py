@@ -1,133 +1,138 @@
 # Python does not have linked lists in its standard library.
 # We implement the concept of linked lists using the concept of nodes
 
-class Node:
-    def __init__(self, value):
+class Node(value):
+    def __init__(self):
         self.value = value
         self.next = None
 
+
 class LinkedList:
-    def __init__(self,vale):
+    def __init__(self, value):
         new_node = Node(value)
         self.head = new_node
-        self.tail = new_node
+        self.tail = None
         self.length = 1
 
-    # print a linkedlist
-    def print_linkedlist(self):
-        temp = self.head
-        while temp is not None:
-            print(temp.value)
-            temp = temp.next
-    # append
-    def append(self,value):
-        new_node  = Node(value)
-        if self.head is None: # self.length == 0
+    def print_list(self):
+        p = self.head
+        while p.next:
+            print
+            p.value
+            p = p.next
+
+    def append(self, value):
+        new_node = Node(value)  # new node need to be appended
+        if self.length == 0:
             self.head = new_node
             self.tail = new_node
         else:
             self.tail.next = new_node
             self.tail = new_node
-        self.length = 1
+        self.length += 1
+        return True
 
-    def pop(self,value):
+    def pop(self):
         if self.length == 0:
             return None
-        temp = self.head
+        p = self.head
         pre = self.head
-        while temp.next is not None: # temp.text
-            pre = temp
-            temp=temp.next
+        while p.next:
+            pre = p
+            p = p.next
         self.tail = pre
         self.tail.next = None
-        self.length -=1
-        if self.length ==0:
+        self.length -= 1
+        # corner case when original linkedlist has only one node
+        if self.length == 0:
             self.head = None
             self.tail = None
-        return temp
+        return p
 
     def prepend(self,value):
         new_node = Node(value)
-        if self.length == 0:
+        if self.length ==0:
             self.head = new_node
             self.tail = new_node
         else:
             new_node.next = self.head
             self.head = new_node
-        self.length +=1
-        return True
-
-    def pop_first(self, value):
-        if self.length == 0:
-            return None
-        temp = self.head
-        self.head = self.head.next
-        temp.next = None # remove the previous head from the linked list
-        self.length -=1
-        if self.length ==0:
-            self.tail = None
-        return temp
-
-    def get(self,index): # return the node for the index
-        if index <0 or index >=self.length:
-            return None
-        else:
-            temp = self.head
-            for i in range(index):
-                temp = temp.next
-            return temp
-
-    def set_value(self, index, value): # change the value for the index
-        new_node = Node(value)
-        temp = self.get(index)
-        if temp:
-            temp.value = value
-            return True
-        return False
-
-    # at a particular index,insert a node
-    def insert_node(self,index, value):
-        if index <0 or index >=self.length:
-            return False
-        if index == 0:
-            return self.prepend(value)
-        elif index == length:
-            return self.append(value)
-        else:
-            new_node = Node(value)
-            temp = self.get(index-1)
-            new_node.next = temp.next
-            temp.next = new_node
-            self.length+=1
-            return True
-
-    # at a particular index, remove a node
-    def remove_node(self, index):
-        if index <0 or index >=self.length:
-            return False
-        if index == 0:
-            return self.pop_first(value)
-        elif index == length-1:
-            return self.pop(value)
-        else:
-            temp = self.get(index-1)
-            tem
-            temp.next = temp.next.next
-            temp.next = new_node
         self.length+=1
         return True
 
+    def pop_first(self):
+        if self.length==0:
+            return None
+        else:
+            p = self.head
+            self.head = p.next
+            p.next = None
+        self.length-=1
+        if self.length==0:
+            self.tail = None
+        return p
 
+    # return the node of index
+    def get(self,index): # index starts from 0
+        if index < 0 or index >= self.length:
+            return None
+        p = self.head
+        for _ in range(index):
+            p = p.next
+        return p
 
+    def set_value(self,index,value):
+        p = self.get(index)
+        if p:
+            p.value=value
+            return True
+        return False
 
+    def insert(self,index,value):
+        new_node = Node(value)
+        if index<0 or index>=self.length:
+            return False
+        elif index ==0:
+            return self.preappend(value)
+        elif index == self.length-1:
+            return self.append(value)
+        else:
+            pre = self.get(index-1)
+            pre.next = new_node
+            new_node.next = pre.next
+        self.length+=1
+        return True
 
+    def remove(self,index):
+        if index < 0 or index >= self.length:
+            return False
+        elif index ==0:
+            return self.pop_first()
+        elif index ==self.length-1:
+            return self.pop()
+        else:
+            pre = self.get(index-1)
+            post = pre.next # the node to be removed
+            pre.next = post.next
+            post.next = None
+        self.length -= 1
+        return True
 
+    def reversed(self):
+        temp = self.head
+        self.head = self.tail
+        self.tail = temp
+        after = temp.next
+        before = None
+        for _ in range(self.length):
+            after = temp.next
+            temp.next = before
+            before = temp
+            temp = after
 
-
-
-
-
-
-
-my_linked_list = LinkedList(4)
-# print(my_linked_list.head.value)
+my_linked_list = LinkedList(1)
+my_linked_list.append(2)
+my_linked_list.append(3)
+my_linked_list.append(4)
+my_linked_list.reverse()
+my_linked_list.print_list()
