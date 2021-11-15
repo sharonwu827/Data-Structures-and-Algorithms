@@ -1,146 +1,133 @@
 # Python does not have linked lists in its standard library.
 # We implement the concept of linked lists using the concept of nodes
 
-# Creation of Node
 class Node:
-    def __init__(self,initdata):
-        self.data = initdata
+    def __init__(self, value):
+        self.value = value
         self.next = None
-    def getData(self):
-        return self.data
-    def getNext(self):
-        return self.next
-    def setData(self,newdata):
-        self.data = newdata
-    def setNext(self,newnext):
-        self.next = newnext
 
-temp = Node(93)
-temp.getData()
+class LinkedList:
+    def __init__(self,vale):
+        new_node = Node(value)
+        self.head = new_node
+        self.tail = new_node
+        self.length = 1
 
-
-
-
-
-
-
-
-
-
-
-# Creation of Linked list
-class Node:
-    def __init__(self,data):
-        self.data = data
-        self.next=None
-
-class linkedList:
-    def __init__(self):
-        self.head=None
-
-    # To insert an element in a linked list at the beginning
-    # we will first create a node and with the given data and assign its next reference to the first node
-    # i.e where the head is pointing.
-    # then we point the head reference to the new node.
-
-    def insertAtBeginning(self, data):
-        temp = Node(data) # first create a node with given data
-        if self.head == None:
-            self.head = temp
+    # print a linkedlist
+    def print_linkedlist(self):
+        temp = self.head
+        while temp is not None:
+            print(temp.value)
+            temp = temp.next
+    # append
+    def append(self,value):
+        new_node  = Node(value)
+        if self.head is None: # self.length == 0
+            self.head = new_node
+            self.tail = new_node
         else:
-            temp.next = self.head # assign the value's next reference to the first node
-            self.head = temp
+            self.tail.next = new_node
+            self.tail = new_node
+        self.length = 1
 
-    # To insert an element in a linked list at the end
-    # we just have to find the node where the next element refers to None i.e. the last node.
-    # Then we create a new node with the given data and point the next element of the last node to the newly created node.
+    def pop(self,value):
+        if self.length == 0:
+            return None
+        temp = self.head
+        pre = self.head
+        while temp.next is not None: # temp.text
+            pre = temp
+            temp=temp.next
+        self.tail = pre
+        self.tail.next = None
+        self.length -=1
+        if self.length ==0:
+            self.head = None
+            self.tail = None
+        return temp
 
-    def insertAtEnd(self, data):
-        temp = Node(data)
-        if self.head == None:
-            self.head = temp
+    def prepend(self,value):
+        new_node = Node(value)
+        if self.length == 0:
+            self.head = new_node
+            self.tail = new_node
         else:
-            curr = self.head
-            while curr.next != None:
-                curr = curr.next
-            curr.next = temp
+            new_node.next = self.head
+            self.head = new_node
+        self.length +=1
+        return True
 
-    # To insert an element at any other given position
-    # we can count the nodes till we reach that position
-    # then we point the next element of the new node to the next node of the current node
-    # the next reference of the current node to the new node.
+    def pop_first(self, value):
+        if self.length == 0:
+            return None
+        temp = self.head
+        self.head = self.head.next
+        temp.next = None # remove the previous head from the linked list
+        self.length -=1
+        if self.length ==0:
+            self.tail = None
+        return temp
 
-    def insertAtGivenPosition(self, data, position):
-        count = 1
-        curr = self.head # start from the head
-        while count < position - 1 and curr != None:
-            curr = curr.next
-            count += 1
-        temp = Node(data)
-        temp.next = curr.next
-        curr.next = temp
+    def get(self,index): # return the node for the index
+        if index <0 or index >=self.length:
+            return None
+        else:
+            temp = self.head
+            for i in range(index):
+                temp = temp.next
+            return temp
 
-    # To traverse a linked list in python
-    # we will start from the head, print the data and move to the next node until we reach None i.e. end of the linked list.
-    # The following traverse() method implements the program to traverse a linked list in python.
+    def set_value(self, index, value): # change the value for the index
+        new_node = Node(value)
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False
 
-    def traverse(self):
-        curr = self.head # start from the head
-        while curr != None: # until we reach the end
-            print(curr.data)
-            curr = curr.next
+    # at a particular index,insert a node
+    def insert_node(self,index, value):
+        if index <0 or index >=self.length:
+            return False
+        if index == 0:
+            return self.prepend(value)
+        elif index == length:
+            return self.append(value)
+        else:
+            new_node = Node(value)
+            temp = self.get(index-1)
+            new_node.next = temp.next
+            temp.next = new_node
+            self.length+=1
+            return True
 
-
-    # To delete the first node of a linked list
-    # we will first check if the head of the linked list is pointing to None
-    # if yes then we will raise an exception hat the linked list is empty
-    # Otherwise, we will delete the current node referred by head and move the head pointer to the next node.
-    def delFromBeginning(self):
-        try:
-            if self.head == None:
-                raise Exception("Empty Linked List")
-            else:
-                temp = self.head
-                self.head = self.head.next # move the head pointer to the next node
-                del temp
-        except Exception as e:
-            print(str(e))
-
-    # To delete the last node of the linked list
-    # we will traverse each node in the linked list
-    # check if the next pointer of the next node of current node points to None
-    # if yes then the next node of current node is the last node and it will get deleted.
-
-    def delFromEnd(self):
-        try:
-            if self.head == None:
-                raise Exception("Empty Linked List")
-            else:
-                curr = self.head
-                prev = None
-                while curr.next != None:
-                    # traverse each node in the linked list
-                    prev = curr
-                    curr = curr.next
-                prev.next = curr.next
-                del curr
-        except Exception as e:
-            print(str(e))
+    # at a particular index, remove a node
+    def remove_node(self, index):
+        if index <0 or index >=self.length:
+            return False
+        if index == 0:
+            return self.pop_first(value)
+        elif index == length-1:
+            return self.pop(value)
+        else:
+            temp = self.get(index-1)
+            tem
+            temp.next = temp.next.next
+            temp.next = new_node
+        self.length+=1
+        return True
 
 
-    def delAtPos(self, position):
-        try:
-            if self.head == None:
-                raise Exception("Empty Linked List")
-            else:
-                curr = self.head
-                prev = None
-                count = 1
-                while curr != None and count < position:
-                    prev = curr
-                    curr = curr.next
-                    count += 1
-                prev.next = curr.next
-                del curr
-        except Exception as e:
-            print(str(e))
+
+
+
+
+
+
+
+
+
+
+
+my_linked_list = LinkedList(4)
+# print(my_linked_list.head.value)
