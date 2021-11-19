@@ -29,10 +29,13 @@ class stack:
         return True
 
     def pop(self):
-
-
-
-
+        if self.length==0:
+            return None
+        temp = self.head
+        self.head = temp.next
+        temp.next = None
+        self.length-=1
+        return temp
 
 my_stack = stack(4)
 my_stack.print_stack()

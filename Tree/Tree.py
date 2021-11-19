@@ -1,43 +1,51 @@
-
-### Tree representation (lists)
-
-def BinearyTree(r):
-    '''
-    :param r: root node
-    :return: two empty sublists
-    '''
-    return [r,[],[]]
-
-def insertLeft(root,newbranch):
-    t = root.pop(1)
-    if len(t)>1:
-        root.insert(1,[newbranch,t,[]])
-    else:
-        root.insert(1,[newbranch,[],[]])
-    return root
+class Node(value):
+    def __init__(self):
+        self.value = value
+        self.left = None
+        self.right = None
 
 
-def insertRight(root,newbranch):
-    t = root.pop(2)
-    if len(t)>1:
-        root.insert(1,[newbranch,[],t])
-    else:
-        root.insert(1,[newbranch,[],[]])
-    return root
+class BST:
+    def __init__(self):
+        self.root = None
 
-def getRootVal(root):
-    return root[0]
-def setRootVal(root,newVal):
-    root[0] = newVal
+    def print_tree(self):
 
-def getLeftChild(root):
-    return root[1]
+    def insert(self, value):
+        new_node = Node(value)
+        if self.root is None:
+            self.root = new_node
+            return True
+        p = self.root
+        while True:
+            if new_node.value < p.value:
+                if p.left is None:
+                    p.left = new_node
+                    return True
+                else:
+                    p = p.left
+            elif new_node.value > p.value:
+                if p.right == None:
+                    p.right = new_node
+                    return True
+                else:
+                    p = p.right
+            else:  # elif new_node.value == p.value:
+                return False
 
-def getRightChile(root):
-    return root[2]
+    def contain(self, value):
+        if self.root is None:
+            return False
+        p = self.root
+        while p:
+            if value < p.value:
+                p = p.left
+            elif value > p.value:
+                p = p.right
+            else:
+                return True
+        return False
 
-
-r = BinaryTree(3)
-
-insertLeft(r,3)
-insertRight(r,4)
+my_tree = BST()
+my_tree.insert(2)
+my_tree.insert(6)
