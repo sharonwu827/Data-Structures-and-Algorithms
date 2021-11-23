@@ -4,7 +4,6 @@ class Node(value):
         self.left = None
         self.right = None
 
-
 class BST:
     def __init__(self):
         self.root = None
@@ -34,8 +33,8 @@ class BST:
                 return False
 
     def contain(self, value):
-        if self.root is None:
-            return False
+        # if self.root is None:
+        #     return False
         p = self.root
         while p:
             if value < p.value:
