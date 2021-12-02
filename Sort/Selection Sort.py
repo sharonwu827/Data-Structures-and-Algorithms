@@ -7,3 +7,4 @@ def selection_sort(my_list):
         if i != min_index:
             my_list[i], my_list[min_index] = my_list[min_index], my_list[i]
     return my_list
+
