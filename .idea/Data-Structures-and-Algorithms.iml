@@ -10,5 +10,6 @@
     <orderEntry type="module" module-name="Recommender-Systems" />
     <orderEntry type="module" module-name="Django-API" />
     <orderEntry type="module" module-name="Model-Deployment" />
+    <orderEntry type="module" module-name="Automated-trading" />
   </component>
 </module>
