@@ -11,8 +11,10 @@ def binearySearch(nums, target):
         # 当 nums[mid] 被检测之后，下一步的搜索区间应该去掉 mid 分割成两个区间，即 [left, mid) 或 [mid + 1, right)
         if nums[mid] < target:
             left = mid + 1
-        else:
-            right = mid  # 右开,真正右端点为mid-1
+        elif nums[mid] > target:
+            right = mid
+        elif nums[mid] == target:
+            return mid  # 右开,真正右端点为mid-1
     return left  # 此算法结束时保证left = right,返回谁都一样
 
 # 2
@@ -35,8 +37,8 @@ def left_bound(nums, target):
         elif nums[mid] > target:
             right = mid
     # 检查left越界情况
-    if left >= len(nums) or nums[left] != target:
-        return -1
+    # if left >= len(nums) or nums[left] != target:
+    #     return -1
     return left
 
 
@@ -58,13 +60,20 @@ def right_bound(nums, target):
             left = mid + 1
         elif nums[mid] > target:
             right = mid
-    if left ==0 or nums[left-1]!=target:
-        return -1
+    # if left ==0 or nums[left-1]!=target:
+    #     return -1
     return right-1
 
 
+nums= [1,2,2,2,2,3,3,3,3,4,5,5,6,7,8,9]
+target = 2
 
-
+t = binearySearch(nums, target)
+left_b = left_bound(nums, target)
+right_b = right_bound(nums, target)
+print(t)
+print(left_b)
+print(right_b)
 
 
 
