@@ -65,13 +65,13 @@ def right_bound(nums, target):
     return right-1
 
 
-nums= [1,2,2,2,2,3,3,3,3,4,5,5,6,7,8,9]
-target = 2
+nums= [5,7,7,8,8,10]
+target = 8
 
-t = binearySearch(nums, target)
+index = binearySearch(nums, target)
 left_b = left_bound(nums, target)
 right_b = right_bound(nums, target)
-print(t)
+print(index)
 print(left_b)
 print(right_b)
 
