@@ -28,7 +28,8 @@ def left_bound(nums, target):
 
     while left < right: # 终止的条件是 left == right
         mid = left + (right - left) // 2
-        # 找到 target 时不要立即返回，而是缩小「搜索区间」的上界right，在区间 [left, mid) 中继续搜索，即不断向左收缩，达到锁定左侧边界的目的
+        # nums[mid] == target, 这个mid的位置也不一定就是最左侧的那个边界
+        # 缩小「搜索区间」的上界right，在区间 [left, mid) 中继续搜索，即不断向左收缩，达到锁定左侧边界的目的
         if nums[mid] == target:
             # 锁定左侧边界
             right = mid
