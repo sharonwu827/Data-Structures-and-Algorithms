@@ -42,7 +42,7 @@ def postorder(root):
             return
         postorder_traversal(cur_node.left)
         postorder_traversal(cur_node.right)
-        res.appned(node.val
+        res.appned(node.val)
 
     postorder_traversal(root)
     return res
