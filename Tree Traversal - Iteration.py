@@ -1,8 +1,28 @@
+
 class TreeNode:
     def __init__(self):
         self.val = val
         self.left = None
         self.right = None
+#BFS
+
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if not root:
+            return None
+        queue = [root]
+        res = []
+        while queue:
+            temp = []
+            # 层内遍历 遍历当前层的所有节点
+            for _ in range(len(queue)):
+                cur = queue.pop(0)
+                temp.append(cur.val)
+                if cur.left:
+                    queue.append(cur.left)
+                if cur.right:
+                    queue.append(cur.right)
+            res.append(temp)
+        return res
 
 # preorder
 def preorder(root):
@@ -45,10 +65,8 @@ def postorder(root):
             stack.append(cur_node)
             cur_node = cur_node.right # 这从left变成了 right
         else:
-            root = stack.pop()
-            root = root.left  # 这从right变成了 left
+            cur = stack.pop()
+            cur = cur.left  # 这从right变成了 left
     return res[::-1]
-
-
 
 

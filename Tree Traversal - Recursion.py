@@ -11,9 +11,9 @@ def preorder(self, root: TreeNode) -> List[int]:
     def pre_traversal(node):
         if node == None:
             return
-        res.appned(node.val)  # 前序
-        preorder_traverse(cur_node.left)
-        preorder_traverse(cur_node.right)
+        res.append(node.val)  # 前序
+        preorder_traverse(node.left)
+        preorder_traverse(node.right)
 
     pre_traversal(root)
     return res
@@ -24,14 +24,14 @@ def inorder(root):
     res = []
 
     def inorder_traversal(node):
-        if node == None:
-            return
-        inorder_traversal(cur_node.left)
+        if not node:
+            return None
+        inorder_traversal(node.left)
         res.appned(node.val)
-        inorder_traversal(cur_node.right）
-
-    inorder_traversal(root)
-    return res
+        inorder_traversal(node.right）
+        return res
+    
+    return inorder_traversal(root)
 
 
 def postorder(root):
@@ -40,11 +40,9 @@ def postorder(root):
     def postorder_traversal(node):
         if node == None:
             return
-        postorder_traversal(cur_node.left)
-        postorder_traversal(cur_node.right)
+        postorder_traversal(node.left)
+        postorder_traversal(node.right)
         res.appned(node.val)
 
     postorder_traversal(root)
     return res
-
-
