@@ -1,12 +1,13 @@
 
-# 首先选定一个轴心值p ( 如何选择？）
+# 首先选定一个轴心值p (如何选择？）
 # 将数组中小于p的值移到数组左端，其他移动到数组右端 → partition
 # 递归分别处理数组中p左右两边的子数组
 
 # partition:
-# 对于某个下标 j，nums[j] 已经排定，即 nums[j] 经过 partition（切分）操作以后会放置在它「最终应该放置的地方」。而且：
-# nums[left] 到 nums[j - 1] 中的所有元素<= nums[j]
-# nums[j + 1] 到 nums[right] 中的所有元素都>= nums[j]
+# 对于某个下标 j，nums[j] 已经排定，即 nums[j] 经过 partition（切分）操作以后会放置在它「最终应该放置的地方」。
+# 而且：
+## nums[left] 到 nums[j - 1] 中的所有元素<= nums[j]
+## nums[j + 1] 到 nums[right] 中的所有元素都>= nums[j]
 
 
 def partition(arr, left, right):
@@ -18,7 +19,7 @@ def partition(arr, left, right):
         while left<right  and arr[left] <= pivot:  # 从前往后找，直到找到一个比pivot更大的数
             left += 1
         arr[left], arr[right] = arr[right], arr[left]
-    return left # 最后返回pivot在新数组中的位置.
+    return left  # nums[left] 到 arr[-1]是无序的 且>= nums[left], arr[0] 到nums[left]是无序的 且<= nums[left]
 
 
 def quickSort(arr, left, right):
@@ -40,19 +41,14 @@ print(arr)
 # 找到这个位置后停止迭代，完成了一次划分
 
 def topk_split(arr, k, left, right):
-    # 寻找到第k个数停止递归，
-    # 使得nums数组中index左边是前k个小的数
-    # index右边是后面n-k个大的数
     if left<right:
         index = partition(arr, left, right)
         if index==k:
             return
         elif index < k:
             topk_split(arr, k, index+1, right)
-        else:
+        elif index > k:
             topk_split(arr, k, left, index-1)
-
-
 
 #获得前k小的数
 def topk_smalls(arr, k):
