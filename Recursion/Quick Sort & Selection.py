@@ -16,7 +16,7 @@ def partition(arr, left, right):
         while left<right and arr[right]>=pivot:   # 从后往前查找，直到找到一个比pivot更小的数
             right-=1
         arr[left], arr[right] = arr[right], arr[left]
-        while left<right  and arr[left] <= pivot:  # 从前往后找，直到找到一个比pivot更大的数
+        while left<right and arr[left] <= pivot:  # 从前往后找，直到找到一个比pivot更大的数
             left += 1
         arr[left], arr[right] = arr[right], arr[left]
     return left  # nums[left] 到 arr[-1]是无序的 且>= nums[left], arr[0] 到nums[left]是无序的 且<= nums[left]
@@ -34,7 +34,6 @@ print(arr)
 
 
 # https://leetcode-cn.com/problems/kth-largest-element-in-an-array/solution/ji-yu-kuai-pai-de-suo-you-topkwen-ti-jia-ylsd/
-
 # topk
 # 将快速排序改成快速选择
 # 寻找到一个位置，这个位置左边是k个比这个位置上的数更小的数，右边是n-k个比该位置上的数大的数
