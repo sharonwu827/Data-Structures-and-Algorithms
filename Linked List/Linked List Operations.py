@@ -42,3 +42,11 @@ class ListNode:
         else:
             l2.next = self.mergeTwoLists(l1, l2.next)
             return l2
+
+    def findMid(self, l1):
+        slow = l1
+        fast = l1
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        return slow
