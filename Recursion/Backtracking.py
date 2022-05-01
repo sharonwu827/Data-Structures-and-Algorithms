@@ -13,17 +13,20 @@ def backtracking(idx, cur, path):
     '''
     # 找到解
     if cur == target:
-        ans.append(path.copy())]
+        ans.append(path.copy())
         return
     # 搜索完毕
     if idx == n:
         return
+    # 考虑可能的解 进入下一层递归
     for num in nums:
+        # 非法解忽略
         if num == error or num in visited:
             continue
+        # 更新状态
         visited.add(num)
         path.append(num)
         backtracking(idx+1, cur+num, path)
-
+        # 恢复状态
         path.pop()
         visited.remove(num)
