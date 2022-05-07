@@ -13,7 +13,7 @@ class TreeNode:
         res = []
         while queue:
             temp = []
-            # 层内遍历 遍历当前层的所有节点
+            # 层内遍历 遍历当前层的所有节点 如果要确定当前遍历到了哪一层
             for _ in range(len(queue)):
                 cur = queue.pop(0)
                 temp.append(cur.val)

@@ -36,7 +36,6 @@ def inorder(root):
 
 def postorder(root):
     res = []
-
     def postorder_traversal(node):
         if node == None:
             return
