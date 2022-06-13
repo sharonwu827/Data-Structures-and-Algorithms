@@ -4,18 +4,35 @@ class TreeNode:
         self.left = None
         self.right = None
 
+    # https://programmercarl.com/0102.%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86.html
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        res = []
+
+        def dfs(root, depth):
+            if not root:
+                return
+            # start the current depth
+            if len(res) == depth:
+                res.append([])
+            res[depth].append(root.val)
+            dfs(root.left, depth + 1)
+            dfs(root.right, depth + 1)
+        # dfs(root, 0)
+        # return res
+
 
 # preorder
 def preorder(self, root: TreeNode) -> List[int]:
     res = []
-    def pre_traversal(node):
+
+    def dfs(node):
         if node == None:
             return
         res.append(node.val)  # 前序
-        preorder_traverse(node.left)
-        preorder_traverse(node.right)
+        dfs(node.left)
+        dfs(node.right)
 
-    pre_traversal(root)
+    dfs(root)
     return res
 
 
@@ -30,12 +47,13 @@ def inorder(root):
         res.appned(node.val)
         inorder_traversal(node.right）
         return res
-    
+
     return inorder_traversal(root)
 
 
 def postorder(root):
     res = []
+
     def postorder_traversal(node):
         if node == None:
             return
