@@ -4,7 +4,6 @@ class TreeNode:
         self.left = None
         self.right = None
 
-    # BFS
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         if not root:
             return None
@@ -37,7 +36,6 @@ class TreeNode:
                 cur_node = stack.pop()  # 回溯至父节点
                 cur_node = cur_node.right
         return res
-
 
 # inorder
 def inorder(root):
