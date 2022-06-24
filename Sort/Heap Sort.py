@@ -17,7 +17,6 @@ def maxHepify(nums, n, i):
     # Change root, if needed
     if largest != i:
         nums[i], nums[largest] = nums[largest], nums[i]  # swap
-        # Heapify the root.
         maxHepify(nums, n, largest)
 
 
