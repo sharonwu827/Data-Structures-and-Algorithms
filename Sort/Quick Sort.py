@@ -13,15 +13,15 @@ class Solution:
                 left += 1
             # 将更大的数放入右边
             nums[right] = nums[left]
-        pivot = nums[left]  # 注意这里  不是nums[left] = pivot 而是要将pivot移到该在的index
+        nums[left] = pivot  # 注意这里要将pivot移到该在的index
         # 返回待比较数据最终位置
         return left
 
     def quickSort(self, nums, left, right):
         if left < right:
             index = self.partition(nums, left, right)
-            self.quickSort(nums, left, index - 1)
-            self.quickSort(nums, index + 1, right)
+            self.quickSort(nums, left, index - 1) #Sorts the elements to the left of pivot
+            self.quickSort(nums, index + 1, right) #sorts the elements to the right of pivot
             return nums
 
 

@@ -4,12 +4,12 @@
 # 当某一步状态非法时 它将退到上一步中正确的位置 然后继续搜索
 
 
-## 什么时候需要startIndex
-#  从左向右取数，取过的数，不在重复取
+######## 取过的位置不再取 ########
+# 什么时候需要startIndex
+# 从左向右取数，取过的数，不在重复取取过的位置不再取
+# 使用startIndex
 
-## 取过的位置不再取
-## 使用startIndex
-## 216.Combination Sum I https://leetcode.com/problems/combination-sum-iii/
+# 216.Combination Sum I https://leetcode.com/problems/combination-sum-iii/
 
 class Solution:
     def combinationSum3(self, k: int, n: int) -> List[List[int]]:
@@ -30,8 +30,9 @@ class Solution:
         backtrack(1, [])
         return res
 
+######## 同一树层去重 ########
 
-# 同一树层去重 如何判断同一树层上元素（相同的元素）是否使用过了呢？
+# 如何判断同一树层上元素（相同的元素）是否使用过了呢？
 # used
 # 如果candidates[i] == candidates[i - 1] 并且 used[i - 1] == false
 # 就说明：前一个树枝，使用了candidates[i - 1]，也就是说同一树层使用过candidates[i - 1]
@@ -97,14 +98,32 @@ class Solution:
         return res
 
 
-# 同一树枝去重
+######## 同一树枝去重 ########
 
+# 46. Permutations
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        res = []
+        used = [0]*len(nums)
+        def backtrack(path):
+            if len(path) == len(nums):
+                res.append(path[:])
+            for i in range(len(nums)):
+                if used[i] ==1:
+                    continue
+                # # better way to write it
+                # if nums[i] in path:
+                #     continue
+                path.append(nums[i])
+                used[i]=1
+                backtrack(path)
+                used[i]=0
+                path.pop()
+        backtrack([])
+        return res
 
+######## 剪枝 ########
 
-
-
-
-## 剪值
 # 39. Combination Sum https://leetcode.com/problems/combination-sum/
 # 树枝剪枝，已经知道下一层的sum会大于target，就没有必要进入下一层递归了
 
