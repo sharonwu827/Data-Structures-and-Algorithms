@@ -147,7 +147,27 @@ class Solution:
             return nums
 ```
 
-
+### BFS
+```python
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if not root:
+            return None
+        queue = [root]
+        res = []
+        while queue:
+            temp = []
+            # 层内遍历 遍历当前层的所有节点 如果要确定当前遍历到了哪一层
+            for _ in range(len(queue)):
+                cur = queue.pop(0)
+                temp.append(cur.val)
+                if cur.left:
+                    queue.append(cur.left)
+                if cur.right:
+                    queue.append(cur.right)
+            res.append(temp)
+        return res
+```
 
 ## Big-O complexity Chart
 
