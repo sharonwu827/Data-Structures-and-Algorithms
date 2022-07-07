@@ -118,6 +118,14 @@ class Solution:
 [[0 for _ in range(cols)] for _ in range(rows)]
 [[False] * j for _ in range(i)]
 ```
+#### Knapsack
+```python
+# 0-1: element could be chosen or not 
+dp[i][j] --> dp[i-1][j], dp[i-1][j-coins[i]]
+# full: element could be chosen multiply time or not be chosen
+dp[i][j] --> dp[i-1][j], dp[i][j-coins[i]]
+```
+
 ### QuickSort
 ```python
 class Solution:

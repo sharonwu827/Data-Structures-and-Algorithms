@@ -42,7 +42,6 @@ def left_bound(nums, target):
     #     return -1
     return left
 
-
 # 3
 # 寻找右侧边界的二分搜索
 
@@ -75,6 +74,4 @@ right_b = right_bound(nums, target)
 print(index)
 print(left_b)
 print(right_b)
-
-
 
