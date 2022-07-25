@@ -5,6 +5,7 @@ class TreeNode:
         self.right = None
 
     # https://programmercarl.com/0102.%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86.html
+    # 为了让递归的过程中的同一层的节点放在同一个列表中，在递归时要记录深度 depth
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         res = []
 
