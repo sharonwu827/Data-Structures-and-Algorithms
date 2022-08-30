@@ -21,7 +21,6 @@ class TreeNode:
         # dfs(root, 0)
         # return res
 
-
 # preorder
 def preorder(self, root: TreeNode) -> List[int]:
     res = []
@@ -48,7 +47,6 @@ def inorder(root):
         res.appned(node.val)
         inorder_traversal(node.right）
         return res
-
     return inorder_traversal(root)
 
 

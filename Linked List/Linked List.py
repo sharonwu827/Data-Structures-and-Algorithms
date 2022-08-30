@@ -136,3 +136,30 @@ my_linked_list.append(3)
 my_linked_list.append(4)
 my_linked_list.reverse()
 my_linked_list.print_list()
+
+
+def reverse(head, tail):
+    cur = head
+    pre = None
+    while cur!=tail:
+        # 留下联系方式
+        nxt = cur.next
+        # 修改指针
+        cur.next = pre
+        # 继续往下走
+        pre = cur
+        cur = nxt
+
+def dfs(head, pre):
+    if not head:
+        return pre
+    # 留下联系方式（由于后面的都没处理，因此可以通过 head.next 定位到下一个）
+    next = head.next
+    # 主逻辑（改变指针）在进入后面节点的前面（由于前面的都已经处理好了，因此不会有环）
+    head.next = pre
+    dfs(next, head)
+    return res
+
+
+
+
