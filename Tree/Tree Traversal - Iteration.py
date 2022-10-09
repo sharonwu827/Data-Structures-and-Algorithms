@@ -66,3 +66,6 @@ def postorder(root):
             cur = stack.pop()
             cur = cur.left  # 这从right变成了 left
     return res[::-1]
+
+
+
